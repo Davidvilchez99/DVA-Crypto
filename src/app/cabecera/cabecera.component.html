@@ -1,27 +1,30 @@
 <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">DVA Crypto</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item" >
-            <a class="nav-link active" aria-current="page" [routerLink]="['/monedasAll']">Monedas(Listado)</a>
-          </li>
-          <li class="nav-item" *ngIf="this.Usuario.estaLogueado">
-            <a class="nav-link active" aria-current="page" [routerLink]="['/privateFovourites']" (click)="ola()">Favoritos</a>
-          </li>
-          <li class="nav-item" *ngIf="!this.Usuario.estaLogueado">
-            <a  class="nav-link active" aria-current="page" [routerLink]="['/login']">Inicio sesion/Registro</a>
-          </li>
-          <li class="nav-item" *ngIf="this.Usuario.estaLogueado">
-            <a class="nav-link active" aria-current="page" (click)="cerrarSesion()" [routerLink]="['']">Salir ({{this.Usuario.emailUser}})</a>           
-          </li>
-        </ul>
-        <div class="d-flex">
-          <img src="../../assets/img/a64b44f382424c60acb9ae558a6af30b-removebg-preview.png" style="height: 70px;" alt="">
-        </div>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">DVA Crypto</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="['/monedasAll']">Monedas(Listado)</a>
+        </li>
+        <li class="nav-item" *ngIf="this.Usuario.estaLogueado">
+          <a class="nav-link active" aria-current="page" [routerLink]="['/privateFovourites']"
+            (click)="ola()">Favoritos</a>
+        </li>
+        <li class="nav-item" *ngIf="!this.Usuario.estaLogueado">
+          <a class="nav-link active" aria-current="page" [routerLink]="['/login']">Inicio sesion/Registro</a>
+        </li>
+        <li class="nav-item" *ngIf="this.Usuario.estaLogueado">
+          <a class="nav-link active" aria-current="page" (click)="cerrarSesion()" [routerLink]="['']">Salir
+            ({{this.Usuario.emailUser}})</a>
+        </li>
+      </ul>
+      <div class="d-flex">
+        <img src="../../assets/img/a64b44f382424c60acb9ae558a6af30b-removebg-preview.png" style="height: 70px;" alt="">
       </div>
     </div>
-  </nav>
+  </div>
+</nav>

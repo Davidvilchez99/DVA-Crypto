@@ -1,55 +1,41 @@
-<!-- <div *ngFor="let user of datosDeBD | async">
-    <p (click)="obtenerDetalle(user.monedaID)">{{user.monedaID}}</p>    
-</div> -->
-
 <div class="container px-4 py-5" id="custom-cards">
-    <h2 class="pb-2 border-bottom">Monedas favoritas</h2>
-        <h3>Bienvenido {{this.Usuario.emailUser}}</h3>
-    <div class="accordion" id="accordionExample" class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-      <!-- <div class="col" *ngFor="let user of datosDeBD | async"> -->
-        <div class="col accordion-item" *ngFor="let moneda of this.monedaDetalle; let indexOfelement=index; ">
-        <div  class="card card-cover accordion-button h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-image: url({{moneda.image.thumb}}); ">
-          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="border: 1px solid;
+  <h2 class="pb-2 border-bottom">Monedas favoritas</h2>
+  <h3>Bienvenido {{this.Usuario.emailUser}}</h3>
+  <div class="accordion" id="accordionExample" class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+    <div class="col accordion-item" *ngFor="let moneda of this.monedaDetalle; let indexOfelement=index; ">
+      <div class="card card-cover accordion-button h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+        data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
+        style="background-image: url({{moneda.image.thumb}}); ">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="border: 1px solid;
             padding: 10px;
             box-shadow: 5px 10px; background-color: black;">{{moneda.name}}</h3>
-            <ul class="d-flex list-unstyled mt-auto">
-              <li class="list-inline-item">
-                <button class="btn btn-success btn-sm rounded-0" type="button" routerLink="/monedaDetalle/{{moneda.id}}" data-toggle="tooltip" data-placement="top" title="Info"><i class="fa fa-info-circle"></i></button>
+          <ul class="d-flex list-unstyled mt-auto">
+            <li class="list-inline-item">
+              <button class="btn btn-success btn-sm rounded-0" type="button" routerLink="/monedaDetalle/{{moneda.id}}"
+                data-toggle="tooltip" data-placement="top" title="Info"><i class="fa fa-info-circle"></i></button>
             </li>
             <li class="list-inline-item">
-                <button class="btn btn-danger btn-sm rounded-0"  (click)="eliminarFavoritos(moneda.id, indexOfelement)" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+              <button class="btn btn-danger btn-sm rounded-0" (click)="eliminarFavoritos(moneda.id, indexOfelement)"
+                type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i
+                  class="fa fa-trash"></i></button>
             </li>
-            </ul>
-          </div>
-          <div id="" class="show bg-dark" aria-labelledby="headingOne" data-bs-parent="">
-            <div class="body" style="width: 85vw;
+          </ul>
+        </div>
+        <div id="" class="show bg-dark" aria-labelledby="headingOne" data-bs-parent="">
+          <div class="body" style="width: 85vw;
             text-align: center;">
-              <strong>Mas información:</strong><br>
-              <p>Símbolo: {{moneda.symbol}}</p>
-              <p>Precio: {{moneda.market_data.current_price.eur}} €</p>
-              <p>Volumen: {{moneda.market_data.total_volume.eur}} €</p>
-              <p>Capitalización: {{moneda.market_data.market_cap.eur}} €</p>
-              <p>Valor más alto 24h: {{moneda.market_data.high_24h.eur}} €</p>
-              <p>Valor más bajo 24h: {{moneda.market_data.low_24h.eur}} €</p>
-            </div>
+            <strong>Mas información:</strong><br>
+            <p>Símbolo: {{moneda.symbol}}</p>
+            <p>Precio: {{moneda.market_data.current_price.eur}} €</p>
+            <p>Volumen: {{moneda.market_data.total_volume.eur}} €</p>
+            <p>Capitalización: {{moneda.market_data.market_cap.eur}} €</p>
+            <p>Valor más alto 24h: {{moneda.market_data.high_24h.eur}} €</p>
+            <p>Valor más bajo 24h: {{moneda.market_data.low_24h.eur}} €</p>
           </div>
         </div>
       </div>
     </div>
-    
   </div>
-  <!-- <div class="accordion" id="accordionExample">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Accordion Item #1
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <div class="accordion-body">
-          <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-      </div>
-    </div>
-  </div> -->
+
+</div>

@@ -1,27 +1,28 @@
-  <div id="container">  
-        <div class="product-details">
-    <h1>{{detalleMoneda.name}}</h1> <h3>Para mas información presiona el logo --></h3>
-      <span class="hint-star star">
-      </span>
-      <ng-container *ngIf="this.detalleMoneda.description.es; else descripcionIngles">
-        <p class="informaction">{{ detalleMoneda.description.es }}</p>
+<div id="container">
+  <div class="product-details">
+    <h1>{{detalleMoneda.name}}</h1>
+    <h3>Para mas información presiona el logo --></h3>
+    <span class="hint-star star">
+    </span>
+    <ng-container *ngIf="this.detalleMoneda.description.es; else descripcionIngles">
+      <p class="informaction">{{ detalleMoneda.description.es }}</p>
+    </ng-container>
+    <ng-template #descripcionIngles>
+      <ng-container *ngIf="detalleMoneda.description.en; else noDisponible">
+        <p class="informaction">{{ detalleMoneda.description.en }}</p>
       </ng-container>
-      <ng-template #descripcionIngles>
-            <ng-container *ngIf="detalleMoneda.description.en; else noDisponible">
-                  <p class="informaction">{{ detalleMoneda.description.en }}</p>
-            </ng-container>
-      </ng-template>
-      <ng-template #noDisponible>
-            <p class="informaction">Descripción no disponible</p>
-      </ng-template>
+    </ng-template>
+    <ng-template #noDisponible>
+      <p class="informaction">Descripción no disponible</p>
+    </ng-template>
 
     <div class="control">
-    </div>  
-    </div>      
-    <div class="product-image">
-      
-      <img src="{{detalleMoneda.image.large}}" alt="Omar Dsoky">
-          <div class="info">
+    </div>
+  </div>
+  <div class="product-image">
+
+    <img src="{{detalleMoneda.image.large}}" alt="Omar Dsoky">
+    <div class="info">
       <h2>Más informacion</h2>
       <ul>
         <ng-container *ngIf="detalleMoneda.genesis_date; else FechanoDisponible">
@@ -30,18 +31,22 @@
         <ng-template #FechanoDisponible>
           <li><strong>Fecha de creacion: </strong>Fecha no disponible</li>
         </ng-template>
-          <!-- <li><strong>Fecha de creacion: </strong>{{detalleMoneda.genesis_date | date: 'dd/MM/yyyy'}}</li> -->
-          <hr>
-          <li><strong>Precio: </strong>{{detalleMoneda.market_data.current_price.eur}} €</li>
-          <li><strong>Pagina principal: </strong><a href="{{detalleMoneda.links.homepage[0]}}"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-          <li><strong>Twitter: </strong><a href="https://twitter.com/{{detalleMoneda.links.twitter_screen_name}}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-          <li><strong>Git hub: </strong><a href="{{detalleMoneda.links.repos_url.github[0]}}"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        <!-- <li><strong>Fecha de creacion: </strong>{{detalleMoneda.genesis_date | date: 'dd/MM/yyyy'}}</li> -->
+        <hr>
+        <li><strong>Precio: </strong>{{detalleMoneda.market_data.current_price.eur}} €</li>
+        <li><strong>Pagina principal: </strong><a href="{{detalleMoneda.links.homepage[0]}}"><i class="fa fa-home"
+              aria-hidden="true"></i></a></li>
+        <li><strong>Twitter: </strong><a href="https://twitter.com/{{detalleMoneda.links.twitter_screen_name}}"><i
+              class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><strong>Git hub: </strong><a href="{{detalleMoneda.links.repos_url.github[0]}}"><i class="fa fa-github"
+              aria-hidden="true"></i></a></li>
       </ul>
     </div>
-    </div>
-    </div>
-    <div class="product-device shadow-sm d-none d-md-block">
-      <div>
-        <canvasjs-chart [options]="chartOptions" [styles]="{width: '90%', height:'360px'}" (chartInstance)="getChartInstance($event)"></canvasjs-chart>
-      </div>   
-    </div>
+  </div>
+</div>
+<div class="product-device shadow-sm d-none d-md-block">
+  <div>
+    <canvasjs-chart [options]="chartOptions" [styles]="{width: '90%', height:'360px'}"
+      (chartInstance)="getChartInstance($event)"></canvasjs-chart>
+  </div>
+</div>

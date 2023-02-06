@@ -8,32 +8,25 @@ export class DatosApiService {
   public monedaDetalle = new Array<any>();
 
 
-  constructor(private http:HttpClient) { 
+  constructor(private http: HttpClient) {
     this.obtenerDatos();
   }
 
 
-  obtenerDatos(){
+  obtenerDatos() {
     this.http.get('https://api.coingecko.com/api/v3/coins/').subscribe(
-      (datos:any)=>{
+      (datos: any) => {
         this.listaMonedas = datos;
-        console.log(datos)
-        // this.name = datos.name;
-        // this.image = datos.image.small;
-        // this.id = datos.id;
-        // this.categories = datos.categories;
-        // this.description = datos.description.en;
-        // this.nuevoDato.emit(this.listaMonedas);
       }
     )
   }
 
-  obtenerDatosFavoritos(id:any){
-    
-    return this.http.get('https://api.coingecko.com/api/v3/coins/'+id);
+  obtenerDatosFavoritos(id: any) {
+
+    return this.http.get('https://api.coingecko.com/api/v3/coins/' + id);
   }
 
-  obtenerGrafico(id:any){
-    return this.http.get('https://api.coingecko.com/api/v3/coins/'+id+'/market_chart?vs_currency=eur&days=max');
+  obtenerGrafico(id: any) {
+    return this.http.get('https://api.coingecko.com/api/v3/coins/' + id + '/market_chart?vs_currency=eur&days=max');
   }
 }

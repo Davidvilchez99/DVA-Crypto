@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import{UserAuthService} from '../user-auth.service'
+import { UserAuthService } from '../user-auth.service'
 
 @Component({
   selector: 'app-register',
@@ -7,21 +7,20 @@ import{UserAuthService} from '../user-auth.service'
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  username="";
-  password="";
+  username = "";
+  password = "";
 
-  constructor(public Usuario: UserAuthService ) {
-    // this.Usuario.estaLogueadoMethod();
+  constructor(public Usuario: UserAuthService) {
   }
-  altaUsuario(){
+  altaUsuario() {
     this.Usuario.altaUsuario(this.username, this.password);
   }
 
-  registrarseConGoogle(){
+  registrarseConGoogle() {
     this.Usuario.registrarseConGoogle();
   }
 
-  registrarConGitHub(){
+  registrarConGitHub() {
     this.Usuario.gitHubAuth();
   }
 }

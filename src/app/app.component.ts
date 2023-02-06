@@ -6,12 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Crypto';
-  datosTraidos = new Array<any>();;
 
-  capturaEvento(dato:any){
-    this.datosTraidos = dato;
-
-    // this.listaDatos.push(dato);
-  }
 }

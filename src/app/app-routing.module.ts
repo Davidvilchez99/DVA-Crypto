@@ -8,38 +8,38 @@ import { MonedaDetalleComponent } from './moneda-detalle/moneda-detalle.componen
 import { PrivateFavouritesComponent } from './private-favourites/private-favourites.component';
 import { MonedasAllComponent } from './monedas-all/monedas-all.component';
 import { RegisterComponent } from './register/register.component';
-import { AuthGuard } from  './auth/auth.guard';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-  { 
-    path: 'cabecera', 
-    component: CabeceraComponent 
+  {
+    path: 'cabecera',
+    component: CabeceraComponent
   },
-  { 
+  {
     path: 'login',
-     component: LoginComponent,
+    component: LoginComponent,
   },
-  { 
+  {
     path: 'privateFovourites',
-     component: PrivateFavouritesComponent,
-     canActivate: [ AuthGuard ]
+    component: PrivateFavouritesComponent,
+    canActivate: [AuthGuard]
   },
-  { 
+  {
     path: '',
-     component: HomeComponent,
+    component: HomeComponent,
   },
-  { 
+  {
     path: 'monedaDetalle/:id',
-     component: MonedaDetalleComponent,
-     canActivate: [ AuthGuard ]
+    component: MonedaDetalleComponent,
+    canActivate: [AuthGuard]
   },
-  { 
+  {
     path: 'monedasAll',
-     component: MonedasAllComponent,
+    component: MonedasAllComponent,
   },
-  { 
+  {
     path: 'login-register',
-     component: RegisterComponent,
+    component: RegisterComponent,
   }
 ];
 

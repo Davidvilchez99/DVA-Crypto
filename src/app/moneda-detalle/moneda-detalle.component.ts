@@ -1,7 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { DatosApiService} from  '../datos-api.service';
+import { DatosApiService } from '../datos-api.service';
 
 @Component({
   selector: 'app-moneda-detalle',
@@ -12,18 +12,18 @@ export class MonedaDetalleComponent implements AfterViewInit {
 
   Monedaid: any;
   detalleMoneda: any;
-  dataPoints:any = [];
-  chart:any;
+  dataPoints: any = [];
+  chart: any;
   datosGrafico: any;
 
-  constructor(private route: ActivatedRoute, public datosAPI: DatosApiService, public http : HttpClient) {}
+  constructor(private route: ActivatedRoute, public datosAPI: DatosApiService, public http: HttpClient) { }
 
   chartOptions = {
     theme: "light2",
     zoomEnabled: true,
     exportEnabled: true,
     title: {
-      text:""
+      text: ""
     },
     subtitles: [{
       text: "Loading Data...",
@@ -44,11 +44,11 @@ export class MonedaDetalleComponent implements AfterViewInit {
       dataPoints: this.dataPoints
     }]
   }
- 
+
   getChartInstance(chart: object) {
     this.chart = chart;
   }
-  
+
   ngAfterViewInit() {
     this.chartOptions.subtitles[0].text = "";
     this.chartOptions.title.text = this.detalleMoneda.name + " Historical Price";
@@ -61,7 +61,7 @@ export class MonedaDetalleComponent implements AfterViewInit {
           y: this.datosGrafico.prices[i][1]
         });
       }
-    this.chart.render();
+      this.chart.render();
     });
   }
 
