@@ -17,18 +17,7 @@ import { ThisReceiver } from '@angular/compiler';
 export class PrivateFavouritesComponent {
   monedaDetalle = new Array<any>();
 
-  // intervalo = setInterval(() => {
-  //   this.getDatosOfEachCrypto();
-  //   // Voy a hacer que se actualice cada 5 minutos para evitar que la API me bloquee
-  //   console.log("Actualizando datos de las criptomonedas");
-  // }, 900000);
-  
-  // usuarioId = "";
-  // datosBD = new Array<any>();
   constructor(public datosAPI:DatosApiService, public firestore:Firestore, public Usuario:UserAuthService){
-    // this.traerDatosUsuarioMonedas();
-    // this.monedaDetalle = this.Usuario.datosUsuarioMonedas;
-    // console.log(this.monedaDetalle);
   }  
 
   ngOnInit(){
@@ -51,21 +40,5 @@ export class PrivateFavouritesComponent {
       .catch(error => {
           console.log(error);
       })
-  }
-
-//   getDatosOfEachCrypto(){
-    
-//     this.Usuario.datosUsuarioMonedas.forEach((element) => {
-//       // for(let i = 0; i < element.length; i++){
-//         for (let i in element){
-//         this.datosAPI.obtenerDatosFavoritos(element[i].monedaID).subscribe((data:any) => {
-//             console.log(data);
-//           if(this.monedaDetalle.find((crypto:any) => crypto.id == data.id))
-//             return;
-//           this.monedaDetalle.push(data);
-//         })
-//       }
-//     });
-//   }
-  
+  }  
 }
