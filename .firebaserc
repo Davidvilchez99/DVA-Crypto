@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "dva-crypto": {
+      "hosting": {
+        "Crypto": [
+          "dva-crypto"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "dva-crypto"
+  }
+}

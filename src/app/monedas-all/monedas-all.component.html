@@ -1,0 +1,36 @@
+<ngb-pagination
+  [(page)]="page"
+  [pageSize]="pageSize"
+  [collectionSize]="datosAPI.listaMonedas.length">
+</ngb-pagination>
+
+  <!-- <table>
+    <tr *ngFor="let item of datosAPI.listaMonedas | slice: (page-1) * pageSize : page * pageSize">
+      <td (click)="anadirFavoritos(item.id, item.image.thumb)">{{item.name}}</td>
+    </tr>
+  </table> -->
+  <!-- <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Buscar</label>
+    <input [(ngModel)]="filtrado" (keyup)="filtrarMonedas()" [ngModelOptions]="{standalone:true}" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div> -->
+  <div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom">Listado de monedas</h2>
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+      <!-- <div class="col" *ngFor="let user of datosDeBD | async"> -->
+        <div class="col" *ngFor="let item of datosAPI.listaMonedas | slice: (page-1) * pageSize : page * pageSize">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url({{item.image.thumb}}); ">
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="border: 1px solid;
+            padding: 10px;
+            box-shadow: 5px 10px; background-color: black;">{{item.name}}</h3>
+            <ul class="d-flex list-unstyled mt-auto" *ngIf="this.Usuario.estaLogueado">
+              <li class="list-inline-item">
+                <button class="btn btn-success btn-sm rounded-0" type="button" (click)="anadirFavoritos(item.id, item.image.thumb)" data-toggle="tooltip" data-placement="top" title="Info"><i class="fa fa-info-circle"></i></button>
+            </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
